@@ -75,7 +75,7 @@ In order to perform a Self Mint transaction, the end user must receive certain i
 * `bytes36 stamp_outpoint` - [Bitcoincash-BIP143](https://github.com/bitcoincashorg/bitcoincash.org/blob/master/spec/replay-protected-sighash.md#digest-algorithm) outpoint (`bytes32 hash` + `bytes4 vout`) of the stamp UTXO to be spent.
 * `bytes authorization_signature` - [the signature](#authorization-signature) that will be used along with OP_CHECKDATASIG to execute the covenants
 
-THe code is parsed upon receipt by the end user and the three elements are used independently in the construction of the Self Mint transaction.
+The code is parsed upon receipt by the end user and the three elements are used independently in the construction of the Self Mint transaction.
 
 #### Authorization Signature
 
