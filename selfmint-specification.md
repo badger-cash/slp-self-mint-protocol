@@ -20,10 +20,20 @@ The Simple Ledger Protocol Self Mint Token operates on a model where all token i
 ### Initial GENESIS Transaction
 
 Initial creation of the token is done via a standard SLP Token Type 1 [GENESIS](https://github.com/simpleledger/slp-specifications/blob/master/slp-token-type-1.md#genesis---token-genesis-transaction) with the following required values:
-* `<mint_baton_vout>` 0x02-0xff
+* `<mint_baton_vout>` 0x02
 * `<initial_token_mint_quantity>` 0x0000000000000000
 
 The value of tokens created during GENESIS must be 0.
+
+#### Creator Public Key
+
+The funding input at index 0 must spend a UTXO that originates from a P2PKH address associated with the public key used in the [self mint covenants](#self-mint-baton-covenant). In other words, the public key in the scriptSig of `vin 0` can be used to construct the covenants from a template or [reference code](#code).
+
+#### Initial Self Mint Stamp
+
+The output at index 3 is a stamp assigned to the P2SH address for the [self mint postage covenant](#self-mint-postage-covenant) associated with the token. This should be the first output ever sent to that address. In the case of the transaction standard provided in this specification, the stamp amount is 2300 satoshis.
+
+With a GENESIS transaction constructed in this manner, a user can derive all needed information to construct a self mint transaction given only the data provided in the [authorizaton code](#authorization-code), as a query for the first transaction associated with the same address as the stamp to be spent in any given transaction will return the token GENESIS transaction.
 
 #### Example GENESIS Transaction
 
@@ -32,7 +42,8 @@ The value of tokens created during GENESIS must be 0.
 | 0 | *funding input*  | **OP_RETURN SLP GENESIS** |
 | 1 | | **(0 tokens)** 546 satoshis |
 | 2 | | **(mint baton)** 546 satoshis |
-| 3 | | *change* |
+| 3 | | *self mint stamp* 2300 satoshis |
+| 4 | | *change* |
 
 ### Self Mint Baton Covenant
 
