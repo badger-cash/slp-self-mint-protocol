@@ -11,7 +11,7 @@ This specification describes a protocol for decentralized, distributed issuance 
 
 ## Background
 
-In the traditional model, SLP tokens are brought into existence, via GENESIS and MINT transactions that are effectuated by the original issuer of the token and whose value immediately is placed under the control of said issuer. From there, tokens are distributed to other users as standard SEND transactions. There are some exceptions to this model, such as the [MIST](https://read.cash/@kasumi/mist-mineable-slp-token-a166a114) mineable SLP token.
+In the traditional model, SLP tokens are brought into existence via GENESIS and MINT transactions that are effectuated by the original issuer of the token and whose value immediately is placed under the control of said issuer. From there, tokens are distributed to other users as standard SEND transactions. There are some exceptions to this model, such as the [MIST](https://read.cash/@kasumi/mist-mineable-slp-token-a166a114) mineable SLP token.
 
 The Simple Ledger Protocol Self Mint Token operates on a model where all token issuance is distributed and decentralized. In the canonical implementation, the original creator of the token - the entity that performed the original GENESIS transaction - never takes possession of any token value whatsoever. Instead, each new value issuance (MINT) is accomplished via a special [covenant-based transaction](https://cashscript.org/docs/guides/covenants/) with the value assigned to the individual user ("transaction signer") creating, signing, and broadcasting the transaction. The covenant consists of several key spending constraints that allow the original creator of the token to have limited control over new token issuance, without ever transmitting token value.
 
