@@ -7,7 +7,7 @@
 
 ## Purpose
 
-This specification describes a protocol for decentralized, distributed issuance of tokens on networks, such as Bitcoin Cash (BCH) and eCash (XEC), that implement the Simple Ledger Protocol (SLP). By using this protocol, users individual users can issue ("mint") new value, from an already created token, into existance from inside their own non-custodial wallet.
+This specification describes a protocol for decentralized, distributed issuance of tokens on networks, such as Bitcoin Cash (BCH) and eCash (XEC), that implement the Simple Ledger Protocol (SLP). By using this protocol, individual users can issue ("mint") new value, from an already created token, into existance from inside their own non-custodial wallet.
 
 ## Background
 
