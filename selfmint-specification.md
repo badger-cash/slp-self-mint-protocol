@@ -31,7 +31,7 @@ The funding input at index 0 must spend a UTXO that originates from a P2PKH addr
 
 #### Initial Self Mint Stamp
 
-The output at index 3 is a stamp assigned to the P2SH address for the [self mint postage covenant](#self-mint-postage-covenant) associated with the token. This should be the first output ever sent to that address. In the case of the transaction standard provided in this specification, the stamp amount is 2300 satoshis.
+The output at index 1 is a stamp assigned to the P2SH address for the [self mint postage covenant](#self-mint-postage-covenant) associated with the token. This output represents a value of 0 tokens created in GENESIS. This should be the first output ever sent to that address. In the case of the transaction standard provided in this specification, the stamp amount is 2300 satoshis.
 
 With a GENESIS transaction constructed in this manner, a user can derive all needed information to construct a self mint transaction given only the data provided in the [authorizaton code](#authorization-code), as a query for the first transaction associated with the same address as the stamp to be spent in any given transaction will return the token GENESIS transaction.
 
@@ -40,10 +40,9 @@ With a GENESIS transaction constructed in this manner, a user can derive all nee
 | INDEX | INPUT | OUTPUT |
 | ------------ | ------------ | ------------------------------------------|
 | 0 | *funding input*  | **OP_RETURN SLP GENESIS** |
-| 1 | | **(0 tokens)** 546 satoshis |
+| 1 | | **(0 tokens)** *self mint stamp* 2300 satoshis |
 | 2 | | **(mint baton)** 546 satoshis |
-| 3 | | *self mint stamp* 2300 satoshis |
-| 4 | | *change* |
+| 3 | | *change* |
 
 ### Self Mint Baton Covenant
 
