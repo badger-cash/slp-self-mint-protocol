@@ -104,9 +104,9 @@ All [covenant spending constraints](#self-mint-baton-covenant) are secured by a 
 
 ### Covenant Unlocking
 
-While the covenant locking script may take many forms and can be extended with more [spending constraints](#self-mint-baton-covenant) than are listed in this specification, the elements of the unlocking script (scriptPubKey), used to spend Self Mint covenant UTXOs, are standardized. This standardization allows maximum interoperability between wallets and reduces the number of different implementations required to support a robust ecosystem of Self Mint tokens.
+While the covenant locking script may take many forms and can be extended with more [spending constraints](#self-mint-baton-covenant) than are listed in this specification, the elements of the unlocking script (scriptSig), used to spend Self Mint covenant UTXOs, are standardized. This standardization allows maximum interoperability between wallets and reduces the number of different implementations required to support a robust ecosystem of Self Mint tokens.
 
-The standard Self Mint scriptPubKey consists of the following elements (in the order processed):
+The standard Self Mint scriptSig consists of the following elements (in the order processed):
 
 * `p2sh_subscript`
 * `prevout_sequence` - serialization of all input outpoints (`bytes32 hash` + `bytes4 vout`)
