@@ -53,3 +53,11 @@ The following transaction format is used to remove token units from circulation.
     <td>0</td>
   </tr>
 </table>
+
+## Reference Implementations
+
+### Clients
+[CashTab](https://github.com/badger-cash/cashtab) ([wallet.badger.cash](https://wallet.badger.cash) fork) - ReactJS
+
+### Libraries
+[bcash](https://github.com/badger-cash/bcash/blob/master/lib/script/slp.js) - Node.js
