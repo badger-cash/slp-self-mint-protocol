@@ -135,14 +135,13 @@ The following is an example of operations followed by a Self Mint covenant scrip
 ### Initial GENESIS Transaction
 
 Initial creation of the token is done via a standard SLP Token Type 2 [GENESIS](https://github.com/badger-cash/slp-specifications/blob/master/slp-token-type-2.md#genesis---token-genesis-transaction) with the following required values:
-* `<mint_baton_vout>` 0x02
 * `<initial_token_mint_quantity>` 0x0000000000000000
 
 The value of tokens created during GENESIS must be 0.
 
 #### Merkle Proof Public Key Rotation
 
-While the public key scheme described in the previous section of this document may be used, in this section is provided a means of doing a form of key rotation by including a Merkle root in the script vault locking script and then providing a public key and Merkle proof - demonstrating that the provided public key exists in an accepted set of public keys - in the unlocking script att he time of minting. This allows an authorizing entity to effectively rotate keys at intervals and represents an ostensibly more secure implementation of the specification.
+While the public key scheme described in the previous section of this document may be used, in this section is provided a means of doing a form of key rotation by including a Merkle root in the script vault locking script and then providing a public key and Merkle proof - demonstrating that the provided public key exists in an accepted set of public keys - in the unlocking script at the time of minting. This allows an authorizing entity to effectively rotate keys at intervals and represents an ostensibly more secure implementation of the specification.
 
 HASH256 (double SHA256 hash) is the algorithm used to construct the Merkle tree used in this specification.
 
@@ -224,7 +223,7 @@ The standard Self Mint scriptSig consists of the following elements (in the orde
 *`authorizer_public_key`
 *`merkle_proof`
 * `authorization_data` - serialization of:
-*‘authorization_signature_length`
+*`authorization_signature_length`
 *`authorization_signature`
 *`authorization_message`
 * `preimage` - [Bitcoincash-BIP143](https://github.com/bitcoincashorg/bitcoincash.org/blob/master/spec/replay-protected-sighash.md#digest-algorithm) transaction digest
